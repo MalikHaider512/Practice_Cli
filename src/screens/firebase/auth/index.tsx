@@ -1,45 +1,45 @@
-import {View, Text, TextInput, Button, Alert} from 'react-native';
-import React, {useState} from 'react';
+import {View, Text, TextInput} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import styles from './styles';
 import {ScreenWrapper} from 'react-native-screen-wrapper';
-import {FIREBASE_AUTH} from '../../../firebase';
+
+import SimpleButton from '../../../components/simpleButton';
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
+  signInWithEmail,
+  signInWithGoogle,
+  signUpWithEmail,
+} from '../../../firebase/services/firebaseAuthServices';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 export default function Authentication() {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const auth = FIREBASE_AUTH;
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId:
+        '626441452403-30l7i5ep85r7ua58tspqukil1ep5e7o2.apps.googleusercontent.com',
+      offlineAccess: true,
+    });
+  }, []);
 
   const handleLogIn = async () => {
     console.log('Log In....');
-
-    try {
-      const response = await signInWithEmailAndPassword(auth, email, password);
-      console.log('Login Response', response);
-      Alert.alert('Login Successfully');
-    } catch (error) {
-      Alert.alert('Login Error');
-    }
+    let response = await signInWithEmail(email, password);
+    console.log('Login Response....', response);
   };
 
   const handleSignUp = async () => {
     console.log('Sign Up....');
-    try {
-      const response = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password,
-      );
-      console.log('Sign Up Response', response);
-      Alert.alert('Sign Up Successfully');
-    } catch (error) {
-      Alert.alert('Sign Up Error');
-    }
+    let response = await signUpWithEmail(email, password);
+    console.log('Sign Up Response...', response);
+  };
+
+  const handleGoogleSignIn = async () => {
+    console.log('Google Sign In....');
+    let response = await signInWithGoogle();
+    console.log('Google Sign In Response', response);
   };
 
   return (
@@ -58,8 +58,12 @@ export default function Authentication() {
           style={styles.inputStyle}
         />
 
-        <Button title="Login" onPress={handleLogIn} />
-        <Button title="Sign Up" onPress={handleSignUp} />
+        <SimpleButton title="Login" onPress={handleLogIn} />
+        <SimpleButton title="Sign Up" onPress={handleSignUp} />
+        <SimpleButton
+          title="Continue with Google"
+          onPress={handleGoogleSignIn}
+        />
       </View>
     </ScreenWrapper>
   );

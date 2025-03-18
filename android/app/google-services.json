@@ -12,7 +12,20 @@
           "package_name": "com.practice_cli"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "626441452403-gu9grjf3763f9rikn9at7hkk85jlom2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.practice_cli",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "626441452403-30l7i5ep85r7ua58tspqukil1ep5e7o2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyA7_xtH-pdG9SmrHLmr63aey28LmlKSjew"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626441452403-30l7i5ep85r7ua58tspqukil1ep5e7o2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
