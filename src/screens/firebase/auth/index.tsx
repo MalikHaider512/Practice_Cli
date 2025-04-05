@@ -6,23 +6,21 @@ import {ScreenWrapper} from 'react-native-screen-wrapper';
 import SimpleButton from '../../../components/simpleButton';
 import {
   signInWithEmail,
-  signInWithGoogle,
   signUpWithEmail,
 } from '../../../firebase/services/firebaseAuthServices';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 export default function Authentication() {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  useEffect(() => {
-    GoogleSignin.configure({
-      webClientId:
-        '626441452403-30l7i5ep85r7ua58tspqukil1ep5e7o2.apps.googleusercontent.com',
-      offlineAccess: true,
-    });
-  }, []);
+  // useEffect(() => {
+  //   GoogleSignin.configure({
+  //     webClientId:
+  //       '626441452403-30l7i5ep85r7ua58tspqukil1ep5e7o2.apps.googleusercontent.com',
+  //     offlineAccess: true,
+  //   });
+  // }, []);
 
   const handleLogIn = async () => {
     console.log('Log In....');
@@ -38,8 +36,8 @@ export default function Authentication() {
 
   const handleGoogleSignIn = async () => {
     console.log('Google Sign In....');
-    let response = await signInWithGoogle();
-    console.log('Google Sign In Response', response);
+    // let response = await signInWithGoogle();
+    // console.log('Google Sign In Response', response);
   };
 
   return (
