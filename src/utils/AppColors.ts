@@ -58,6 +58,13 @@ const Colors = {
 
   blueRibbon: "#0961F5",
   ebonyClay: "#28303F",
+
+  dodgerBlue: "#1B84F8",
+  emperor: "#545454",
+  bloader: "#F4F4F4",
+  grayChateau: "#A1A3A6",
+  mineShaft: "#282727",
+  nobel: "#B4AEAE",
 };
 
 export default Colors;
