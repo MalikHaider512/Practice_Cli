@@ -7,22 +7,26 @@ import {
   ViewProps,
 } from "react-native";
 import styles from "./styles";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
-interface SimpleButtonProps extends TouchableOpacityProps {
+interface BothSideIconButtonProps extends TouchableOpacityProps {
   title?: string;
   textStyles?: TextProps;
   btnStyles?: ViewProps;
 }
 
-export default function SimpleButton({
+export default function BothSideIconButton({
   title,
   textStyles,
   btnStyles,
   ...rest
-}: SimpleButtonProps) {
+}: BothSideIconButtonProps) {
   return (
     <TouchableOpacity style={[styles.buttonView, btnStyles]} {...rest}>
+      <AntDesign name="upload" size={25} />
       <Text style={[styles.textStyle, textStyles]}> {title}</Text>
+
+      <AntDesign name="right" size={25} />
     </TouchableOpacity>
   );
 }
