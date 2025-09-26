@@ -3,6 +3,8 @@ import { Text, View } from "react-native";
 import { ScreenWrapper } from "react-native-screen-wrapper";
 import {
   BothSideIconButton,
+  CustomButton,
+  FloatingActionButton,
   GradientButton,
   Header,
   LeftIconButton,
@@ -11,6 +13,7 @@ import {
 } from "../../components";
 import { SafeAreaView } from "react-native-safe-area-context";
 import commonStyles from "../../utils/CommonStyles";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function Buttons() {
   const handleSimpleButtonPress = () => {
@@ -31,6 +34,14 @@ export default function Buttons() {
 
   const handleBothSideIconButtonPress = () => {
     console.log("Right Icon Button Pressed....");
+  };
+
+  const handleCustomButtonPress = () => {
+    console.log("Custom Button Pressed....");
+  };
+
+  const handleFloatinActionButtonPress = () => {
+    console.log("Floating Button Pressed....");
   };
   return (
     <SafeAreaView style={commonStyles.parentView}>
@@ -57,6 +68,15 @@ export default function Buttons() {
         title="Both Side Icon Button"
         onPress={handleBothSideIconButtonPress}
       />
+
+      <CustomButton
+        title="Custom Button"
+        leftIcon={<AntDesign name="upload" size={25} />}
+        rightIcon={<AntDesign name="right" size={25} />}
+        onPress={handleCustomButtonPress}
+      />
+
+      <FloatingActionButton onPress={handleFloatinActionButtonPress} />
     </SafeAreaView>
   );
 }
