@@ -1,11 +1,37 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import {
+  Text,
+  TextProps,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  ViewProps,
+} from "react-native";
 import styles from "./styles";
+import LinearGradient from "react-native-linear-gradient";
+import Colors from "../../../utils/AppColors";
 
-export default function GradientButton() {
+interface GradientButtonProps extends TouchableOpacityProps {
+  title?: string;
+  textStyles?: TextProps;
+  btnStyles?: ViewProps;
+}
+
+export default function GradientButton({
+  title,
+  textStyles,
+  btnStyles,
+  ...rest
+}: GradientButtonProps) {
   return (
-    <TouchableOpacity>
-      <Text>Gradient Button</Text>
+    <TouchableOpacity style={[styles.buttonView, btnStyles]} {...rest}>
+      <LinearGradient
+        colors={[Colors.nobel, Colors.alto, Colors.grayMedium]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.gradientView}
+      >
+        <Text style={[styles.textStyle, textStyles]}> {title}</Text>
+      </LinearGradient>
     </TouchableOpacity>
   );
 }

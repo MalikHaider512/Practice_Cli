@@ -7,22 +7,19 @@ import {
   ViewProps,
 } from "react-native";
 import styles from "./styles";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
-interface SimpleButtonProps extends TouchableOpacityProps {
-  title?: string;
-  textStyles?: TextProps;
+interface FloatinActionButtonProps extends TouchableOpacityProps {
   btnStyles?: ViewProps;
 }
 
-export default function SimpleButton({
-  title,
-  textStyles,
+export default function FloatingActionButton({
   btnStyles,
   ...rest
-}: SimpleButtonProps) {
+}: FloatinActionButtonProps) {
   return (
     <TouchableOpacity style={[styles.buttonView, btnStyles]} {...rest}>
-      <Text style={[styles.textStyle, textStyles]}> {title}</Text>
+      <AntDesign name="plus" size={25} />
     </TouchableOpacity>
   );
 }

@@ -6,6 +6,8 @@ import { useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../../utils/types";
 import ScreensName from "../../routes/routes";
 import { StackNavigationProp } from "@react-navigation/stack";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { SimpleButton } from "../../components";
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
 
@@ -15,12 +17,10 @@ export default function Home() {
     navigation.navigate(ScreensName.BUTTONS);
   };
   return (
-    <ScreenWrapper>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.parentView}>
-        <Text>Home</Text>
-
-        <Button title="Go To Buttons" onPress={handleGoToButton} />
+        <SimpleButton title="Go To Buttons" onPress={handleGoToButton} />
       </View>
-    </ScreenWrapper>
+    </SafeAreaView>
   );
 }

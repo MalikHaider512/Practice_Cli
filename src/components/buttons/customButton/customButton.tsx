@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import {
   Text,
   TextProps,
@@ -8,21 +8,28 @@ import {
 } from "react-native";
 import styles from "./styles";
 
-interface SimpleButtonProps extends TouchableOpacityProps {
+interface CustomButtonProps extends TouchableOpacityProps {
   title?: string;
   textStyles?: TextProps;
   btnStyles?: ViewProps;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
 }
 
-export default function SimpleButton({
+export default function CustomButton({
   title,
   textStyles,
   btnStyles,
+  leftIcon,
+  rightIcon,
   ...rest
-}: SimpleButtonProps) {
+}: CustomButtonProps) {
   return (
     <TouchableOpacity style={[styles.buttonView, btnStyles]} {...rest}>
+      {leftIcon}
       <Text style={[styles.textStyle, textStyles]}> {title}</Text>
+
+      {rightIcon}
     </TouchableOpacity>
   );
 }
