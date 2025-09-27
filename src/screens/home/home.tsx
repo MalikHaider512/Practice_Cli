@@ -16,10 +16,16 @@ export default function Home() {
   const handleGoToButton = () => {
     navigation.navigate(ScreensName.BUTTONS);
   };
+
+  const handleGoToInput = () => {
+    navigation.navigate(ScreensName.INPUTS);
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.parentView}>
         <SimpleButton title="Go To Buttons" onPress={handleGoToButton} />
+        <SimpleButton title="Go To Inputs" onPress={handleGoToInput} />
       </View>
     </SafeAreaView>
   );
