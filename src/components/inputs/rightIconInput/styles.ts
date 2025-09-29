@@ -12,11 +12,12 @@ const styles = StyleSheet.create({
     height: height(5),
     justifyContent: "center",
     borderColor: Colors.alto,
-
     marginVertical: height(1),
+    flexDirection: "row",
   },
   inputStyle: {
     flex: 1,
+    marginRight: width(2),
   },
 });
 

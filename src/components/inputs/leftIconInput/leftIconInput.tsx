@@ -10,19 +10,21 @@ import {
   ViewStyle,
 } from "react-native";
 import styles from "./styles";
+import Feather from "react-native-vector-icons/Feather";
 
-interface SimpleInputProps extends TextInputProps {
+interface LeftIconInputProps extends TextInputProps {
   viewStyles?: StyleProp<ViewStyle>; // ✅ Correct type for View styles
   inputStyles?: StyleProp<TextStyle>;
 }
 
-export default function SimpleInput({
+export default function LeftIconInput({
   viewStyles,
   inputStyles,
   ...rest
-}: SimpleInputProps) {
+}: LeftIconInputProps) {
   return (
     <View style={[styles.viewStyles, viewStyles]}>
+      <Feather name="user" size={20} />
       <TextInput style={[styles.inputStyle, inputStyles]} {...rest} />
     </View>
   );
