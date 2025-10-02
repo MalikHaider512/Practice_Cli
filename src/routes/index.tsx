@@ -8,7 +8,12 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { RootStackParamList } from "../utils/types";
 
-import { ButtonsScreen, HomeScreen, VoiceRecordingScreen } from "../screens";
+import {
+  ButtonsScreen,
+  HomeScreen,
+  InputsScreen,
+  VoiceRecordingScreen,
+} from "../screens";
 
 import ScreensName from "./routes";
 
@@ -28,6 +33,8 @@ const Router = () => {
           name={ScreensName.VOICERECORDING}
           component={VoiceRecordingScreen}
         />
+
+        <Stack.Screen name={ScreensName.INPUTS} component={InputsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
