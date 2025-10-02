@@ -16,6 +16,10 @@ import AudioRecorderPlayer, {
   AudioEncoderAndroidType,
   AudioSourceAndroidType,
 } from "react-native-audio-recorder-player";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Header } from "../../components";
+import Colors from "../../utils/AppColors";
+import styles from "./styles";
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
 
@@ -111,17 +115,26 @@ export default function VoiceRecording() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <Header title={"Voice Recording"} />
       {/* Recorder Buttons */}
       <View style={styles.recorderControls}>
         {!recording ? (
           <TouchableOpacity style={styles.recBtn} onPress={startRecording}>
-            <Ionicons name="mic-circle-outline" size={60} color="#FF3B30" />
+            <Ionicons
+              name="mic-circle-outline"
+              size={60}
+              color={Colors.redOrange}
+            />
             <Text style={styles.recText}>Record</Text>
           </TouchableOpacity>
         ) : (
           <TouchableOpacity style={styles.recBtn} onPress={stopRecording}>
-            <Ionicons name="stop-circle-outline" size={60} color="#FF9500" />
+            <Ionicons
+              name="stop-circle-outline"
+              size={60}
+              color={Colors.pizazz}
+            />
             <Text style={styles.recText}>Stop</Text>
           </TouchableOpacity>
         )}
@@ -139,9 +152,9 @@ export default function VoiceRecording() {
             maximumValue={duration}
             value={currentPosition}
             onSlidingComplete={onSeek}
-            minimumTrackTintColor="#1EB1FC"
-            maximumTrackTintColor="#ccc"
-            thumbTintColor="#1EB1FC"
+            minimumTrackTintColor={Colors.dogerBlue}
+            maximumTrackTintColor={Colors.alto}
+            thumbTintColor={Colors.dogerBlue}
           />
 
           {/* Time Display */}
@@ -154,11 +167,19 @@ export default function VoiceRecording() {
           <View style={styles.controls}>
             {!isPlaying ? (
               <TouchableOpacity onPress={playRecording}>
-                <Ionicons name="play-circle" size={64} color="#1EB1FC" />
+                <Ionicons
+                  name="play-circle"
+                  size={64}
+                  color={Colors.dodgerBlue}
+                />
               </TouchableOpacity>
             ) : (
               <TouchableOpacity onPress={pauseRecording}>
-                <Ionicons name="pause-circle" size={64} color="#1EB1FC" />
+                <Ionicons
+                  name="pause-circle"
+                  size={64}
+                  color={Colors.dodgerBlue}
+                />
               </TouchableOpacity>
             )}
 
@@ -174,57 +195,6 @@ export default function VoiceRecording() {
           </View>
         </View>
       )}
-    </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#F2F2F7",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-  },
-  recorderControls: {
-    marginBottom: 30,
-  },
-  recBtn: {
-    alignItems: "center",
-  },
-  recText: {
-    marginTop: 8,
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#333",
-  },
-  card: {
-    width: "100%",
-    backgroundColor: "#fff",
-    borderRadius: 16,
-    padding: 20,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 3 },
-    shadowRadius: 6,
-    elevation: 4,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "700",
-    marginBottom: 12,
-    color: "#222",
-  },
-  timeRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginVertical: 4,
-  },
-  controls: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 12,
-    gap: 20,
-  },
-});

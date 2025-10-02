@@ -65,6 +65,10 @@ const Colors = {
   grayChateau: "#A1A3A6",
   mineShaft: "#282727",
   nobel: "#B4AEAE",
+  dogerBlue: "#1EB1FC",
+  redOrange: "#FF3B30",
+  pizazz: "#FF9500",
+  athensGray: "#F2F2F7",
 };
 
 export default Colors;
