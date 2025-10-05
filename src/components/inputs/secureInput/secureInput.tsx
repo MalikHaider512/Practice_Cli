@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import {
   View,
   TextInput,
@@ -7,8 +7,10 @@ import {
   TextInputProps,
   ViewStyle,
   TextStyle,
+  TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
+import Feather from "react-native-vector-icons/Feather";
 
 interface SimpleInputProps extends TextInputProps {
   label?: string;
@@ -19,7 +21,7 @@ interface SimpleInputProps extends TextInputProps {
   inputStyle?: TextStyle;
 }
 
-export default function RightIconInput({
+export default function SecureInput({
   label,
   icon,
   error,
@@ -28,12 +30,23 @@ export default function RightIconInput({
   inputStyle,
   ...rest
 }: SimpleInputProps) {
+  const [secure, setSecure] = useState(true);
+
+  const handleSecure = () => {
+    setSecure(!secure);
+  };
   return (
     <View style={[styles.parentView, parentView]}>
       {label && <Text style={styles.label}>{label}</Text>}
       <View style={[styles.inputView, inputView, error && styles.errorBorder]}>
-        <TextInput style={[styles.inputStyles, inputStyle]} {...rest} />
-        {icon}
+        <TextInput
+          style={[styles.inputStyles, inputStyle]}
+          {...rest}
+          secureTextEntry={secure}
+        />
+        <TouchableOpacity onPress={handleSecure}>
+          <Feather name={secure ? "eye-off" : "eye"} size={18} />
+        </TouchableOpacity>
       </View>
       {error && <Text style={styles.errorText}>{error}</Text>}
     </View>

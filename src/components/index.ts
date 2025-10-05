@@ -6,6 +6,10 @@ import RightIconButton from "./buttons/rightIconButton";
 import BothSideIconButton from "./buttons/BothSideIconButton";
 import CustomButton from "./buttons/customButton/customButton";
 import FloatingActionButton from "./buttons/floatingActionButton/floatinActionButton";
+import SimpleInput from "./inputs/simpleInput/simpleInput";
+import LeftIconInput from "./inputs/leftIconInput/leftIconInput";
+import RightIconInput from "./inputs/rightIconInput/rightIconInput";
+import SecureInput from "./inputs/secureInput/secureInput";
 
 export {
   SimpleButton,
@@ -16,4 +20,8 @@ export {
   BothSideIconButton,
   CustomButton,
   FloatingActionButton,
+  SimpleInput,
+  LeftIconInput,
+  RightIconInput,
+  SecureInput,
 };

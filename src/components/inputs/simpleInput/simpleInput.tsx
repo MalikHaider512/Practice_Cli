@@ -1,10 +1,39 @@
 import React from "react";
-import { Text, View } from "react-native";
+import {
+  View,
+  TextInput,
+  Text,
+  StyleSheet,
+  TextInputProps,
+  ViewStyle,
+  TextStyle,
+} from "react-native";
+import styles from "./styles";
 
-export default function SimpleInput() {
+interface SimpleInputProps extends TextInputProps {
+  label?: string;
+
+  error?: string;
+  parentView?: ViewStyle;
+  inputStyle?: TextStyle;
+}
+
+export default function SimpleInput({
+  label,
+
+  error,
+  parentView,
+  inputStyle,
+  ...rest
+}: SimpleInputProps) {
   return (
-    <View>
-      <Text>Simple Input</Text>
+    <View style={[styles.parentView, parentView]}>
+      {label && <Text style={styles.label}>{label}</Text>}
+      <TextInput
+        style={[styles.inputStyles, inputStyle, error && styles.errorBorder]}
+        {...rest}
+      />
+      {error && <Text style={styles.errorText}>{error}</Text>}
     </View>
   );
 }
