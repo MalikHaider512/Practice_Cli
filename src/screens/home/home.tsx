@@ -17,9 +17,9 @@ export default function Home() {
     navigation.navigate(ScreensName.BUTTONS);
   };
 
-  // const handleGoToInput = () => {
-  //   navigation.navigate(ScreensName.INPUTS);
-  // };
+  const handleGoToInput = () => {
+    navigation.navigate(ScreensName.INPUTS);
+  };
 
   const handleGoToVoiceRecording = () => {
     navigation.navigate(ScreensName.VOICERECORDING);
@@ -29,6 +29,7 @@ export default function Home() {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.parentView}>
         <SimpleButton title="Go To Buttons" onPress={handleGoToButton} />
+        <SimpleButton title="Go To Inputs" onPress={handleGoToInput} />
         <SimpleButton
           title="Go To Voice Recording"
           onPress={handleGoToVoiceRecording}
