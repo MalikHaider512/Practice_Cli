@@ -13,12 +13,18 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     marginBottom: height(1),
   },
-  inputStyles: {
+  inputView: {
     borderWidth: 1,
     borderColor: Colors.alto,
     borderRadius: 20,
     paddingHorizontal: width(2),
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  inputStyles: {
     height: height(5),
+    flex: 1,
+    paddingHorizontal: width(2),
   },
   errorText: {
     color: Colors.red,

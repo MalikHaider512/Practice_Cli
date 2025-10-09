@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
   errorBorder: {
     borderColor: Colors.red,
   },
+  focusedInput: {
+    borderColor: Colors.blueRibbon,
+  },
 });
 
 export default styles;

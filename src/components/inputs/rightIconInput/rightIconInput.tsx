@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import {
   View,
   TextInput,
@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import styles from "./styles";
 
-interface SimpleInputProps extends TextInputProps {
+interface RightIconInputProps extends TextInputProps {
   label?: string;
   icon?: ReactNode;
   error?: string;
@@ -27,12 +27,25 @@ export default function RightIconInput({
   inputView,
   inputStyle,
   ...rest
-}: SimpleInputProps) {
+}: RightIconInputProps) {
+  const [isFocused, setIsFocused] = useState(false);
   return (
     <View style={[styles.parentView, parentView]}>
       {label && <Text style={styles.label}>{label}</Text>}
-      <View style={[styles.inputView, inputView, error && styles.errorBorder]}>
-        <TextInput style={[styles.inputStyles, inputStyle]} {...rest} />
+      <View
+        style={[
+          styles.inputView,
+          inputView,
+          isFocused && styles.focusedInput,
+          error && styles.errorBorder,
+        ]}
+      >
+        <TextInput
+          style={[styles.inputStyles, inputStyle]}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          {...rest}
+        />
         {icon}
       </View>
       {error && <Text style={styles.errorText}>{error}</Text>}

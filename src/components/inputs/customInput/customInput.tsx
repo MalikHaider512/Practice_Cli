@@ -12,29 +12,37 @@ import {
 import styles from "./styles";
 import Feather from "react-native-vector-icons/Feather";
 
-interface ScureInputProps extends TextInputProps {
+interface SimpleInputProps extends TextInputProps {
   label?: string;
   icon?: ReactNode;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   error?: string;
   parentView?: ViewStyle;
   inputView?: ViewStyle;
   inputStyle?: TextStyle;
+  isSecured?: boolean;
 }
 
-export default function SecureInput({
+export default function CustomInput({
   label,
   icon,
+  leftIcon,
+  rightIcon,
   error,
   parentView,
   inputView,
   inputStyle,
+  isSecured = false,
   ...rest
-}: ScureInputProps) {
+}: SimpleInputProps) {
   const [secure, setSecure] = useState(true);
   const [isFocused, setIsFocused] = useState(false);
 
   const handleSecure = () => {
-    setSecure(!secure);
+    if (isSecured) {
+      setSecure(!secure);
+    }
   };
   return (
     <View style={[styles.parentView, parentView]}>
@@ -47,6 +55,7 @@ export default function SecureInput({
           error && styles.errorBorder,
         ]}
       >
+        {leftIcon}
         <TextInput
           style={[styles.inputStyles, inputStyle]}
           {...rest}
@@ -54,9 +63,13 @@ export default function SecureInput({
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />
-        <TouchableOpacity onPress={handleSecure}>
-          <Feather name={secure ? "eye-off" : "eye"} size={18} />
-        </TouchableOpacity>
+        {isSecured ? (
+          <TouchableOpacity onPress={handleSecure}>
+            <Feather name={secure ? "eye-off" : "eye"} size={18} />
+          </TouchableOpacity>
+        ) : (
+          rightIcon
+        )}
       </View>
       {error && <Text style={styles.errorText}>{error}</Text>}
     </View>

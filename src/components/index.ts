@@ -10,6 +10,7 @@ import SimpleInput from "./inputs/simpleInput/simpleInput";
 import LeftIconInput from "./inputs/leftIconInput/leftIconInput";
 import RightIconInput from "./inputs/rightIconInput/rightIconInput";
 import SecureInput from "./inputs/secureInput/secureInput";
+import CustomInput from "./inputs/customInput/customInput";
 
 export {
   SimpleButton,
@@ -24,4 +25,5 @@ export {
   LeftIconInput,
   RightIconInput,
   SecureInput,
+  CustomInput,
 };

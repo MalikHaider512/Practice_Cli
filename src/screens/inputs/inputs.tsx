@@ -2,6 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
+  CustomInput,
   Header,
   LeftIconInput,
   RightIconInput,
@@ -29,6 +30,14 @@ export default function Inputs() {
       />
 
       <SecureInput placeholder="Enter Text" label="Secure Input" />
+
+      <CustomInput
+        placeholder="Enter Text"
+        label="Custom Input"
+        leftIcon={<Feather name={"user"} size={18} color={Colors.black} />}
+        rightIcon={<Feather name={"user"} size={18} color={Colors.black} />}
+        isSecured={true}
+      />
     </SafeAreaView>
   );
 }

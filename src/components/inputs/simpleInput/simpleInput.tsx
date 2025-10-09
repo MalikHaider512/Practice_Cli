@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   TextInput,
@@ -20,17 +20,24 @@ interface SimpleInputProps extends TextInputProps {
 
 export default function SimpleInput({
   label,
-
   error,
   parentView,
   inputStyle,
   ...rest
 }: SimpleInputProps) {
+  const [isFocused, setIsFocused] = useState(false);
   return (
     <View style={[styles.parentView, parentView]}>
       {label && <Text style={styles.label}>{label}</Text>}
       <TextInput
-        style={[styles.inputStyles, inputStyle, error && styles.errorBorder]}
+        style={[
+          styles.inputStyles,
+          inputStyle,
+          isFocused && styles.focusedInput,
+          error && styles.errorBorder,
+        ]}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
         {...rest}
       />
       {error && <Text style={styles.errorText}>{error}</Text>}
