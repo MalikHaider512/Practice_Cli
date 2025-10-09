@@ -2,6 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
+  BothSideIconInput,
   CustomInput,
   Header,
   LeftIconInput,
@@ -30,6 +31,13 @@ export default function Inputs() {
       />
 
       <SecureInput placeholder="Enter Text" label="Secure Input" />
+
+      <BothSideIconInput
+        placeholder="Enter Text"
+        label="Both Side Icon Input"
+        leftIcon={<Feather name={"user"} size={18} color={Colors.black} />}
+        rightIcon={<Feather name={"user"} size={18} color={Colors.black} />}
+      />
 
       <CustomInput
         placeholder="Enter Text"
