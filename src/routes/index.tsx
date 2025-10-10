@@ -12,6 +12,7 @@ import {
   ButtonsScreen,
   HomeScreen,
   InputsScreen,
+  ModalsScreen,
   VoiceRecordingScreen,
 } from "../screens";
 
@@ -35,6 +36,7 @@ const Router = () => {
         />
 
         <Stack.Screen name={ScreensName.INPUTS} component={InputsScreen} />
+        <Stack.Screen name={ScreensName.MODALS} component={ModalsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

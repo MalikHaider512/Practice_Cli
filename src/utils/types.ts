@@ -5,6 +5,7 @@ export type RootStackParamList = {
   Buttons: undefined;
   VoiceRecording: undefined;
   Inputs: undefined;
+  Modals: undefined;
 };
 
 export type NavigationProp = StackNavigationProp<RootStackParamList>;

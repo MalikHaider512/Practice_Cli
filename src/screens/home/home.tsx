@@ -25,6 +25,10 @@ export default function Home() {
     navigation.navigate(ScreensName.VOICERECORDING);
   };
 
+  const handleGoToModal = () => {
+    navigation.navigate(ScreensName.MODALS);
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.parentView}>
@@ -34,6 +38,8 @@ export default function Home() {
           title="Go To Voice Recording"
           onPress={handleGoToVoiceRecording}
         />
+
+        <SimpleButton title="Go To Modal" onPress={handleGoToModal} />
       </View>
     </SafeAreaView>
   );

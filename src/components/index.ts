@@ -12,6 +12,7 @@ import RightIconInput from "./inputs/rightIconInput/rightIconInput";
 import SecureInput from "./inputs/secureInput/secureInput";
 import CustomInput from "./inputs/customInput/customInput";
 import BothSideIconInput from "./inputs/bothSideIconInput/bothSideIconInput";
+import SimpleModal from "./modals/simpleModal/simpleModal";
 
 export {
   SimpleButton,
@@ -28,4 +29,5 @@ export {
   SecureInput,
   CustomInput,
   BothSideIconInput,
+  SimpleModal,
 };
