@@ -25,6 +25,10 @@ const light = {
   shadow: '#000000',
   icon: '#334155',
   statusBar: 'dark-content' as StatusBarStyle,
+  actionBtnBg: 'rgba(0, 0, 0, 0.03)',
+  actionBtnBorder: '#E2E8F0',
+  themeToggleBg: 'rgba(99, 102, 241, 0.08)',
+  themeToggleBorder: 'rgba(99, 102, 241, 0.25)',
 };
 
 const dark = {
@@ -39,6 +43,10 @@ const dark = {
   shadow: '#000000',
   icon: '#94A3B8',
   statusBar: 'light-content' as StatusBarStyle,
+  actionBtnBg: 'rgba(255, 255, 255, 0.06)',
+  actionBtnBorder: '#334155',
+  themeToggleBg: 'rgba(245, 158, 11, 0.12)',
+  themeToggleBorder: 'rgba(245, 158, 11, 0.3)',
 };
 
 export type AppThemeColors = typeof light;

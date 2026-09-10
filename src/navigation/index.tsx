@@ -13,16 +13,7 @@ export const RootNavigator = () => {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerStyle: {
-            backgroundColor: '#0F172A',
-          },
-          headerTintColor: '#F8FAFC',
-          headerTitleStyle: {
-            fontWeight: '600',
-          },
-          contentStyle: {
-            backgroundColor: '#0F172A',
-          },
+          headerShown: false,
         }}
       >
         <Stack.Screen name={screenNames.HOME} component={HomeScreen} />
