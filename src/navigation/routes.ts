@@ -1,8 +1,10 @@
 const screenNames = {
   HOME: 'Home',
-  FACE_DETECTION: 'FaceDetection',
-  IMAGE_LABELLING: 'ImageLabelling',
-  TEXT_RECOGNITION: 'TextRecognition',
+  MLKITMAINMENU: 'MLKitMainMenu',
+  FACEDETECTION: 'FaceDetection',
+  IMAGELABELLING: 'ImageLabelling',
+  FOODDETECTION: 'FoodDetection',
+  TEXTRECOGNITION: 'TextRecognition',
 } as const;
 
 export default screenNames;

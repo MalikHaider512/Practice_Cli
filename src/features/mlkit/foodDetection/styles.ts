@@ -1,0 +1,516 @@
+import { StyleSheet } from 'react-native';
+import { AppThemeColors } from '../../../utils/Colors';
+
+export const getStyles = (colors: AppThemeColors) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      paddingHorizontal: 16,
+      backgroundColor: colors.background,
+    },
+    scrollContent: {
+      paddingHorizontal: 16,
+      paddingTop: 8,
+      paddingBottom: 48,
+    },
+    sectionTitle: {
+      fontSize: 16,
+      fontWeight: '700',
+      color: colors.text,
+      marginBottom: 10,
+    },
+    // Image Preview & Upload Box
+    pickerCard: {
+      backgroundColor: colors.card,
+      borderRadius: 20,
+      padding: 16,
+      borderWidth: 1,
+      borderColor: colors.border,
+      shadowColor: colors.shadow,
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.08,
+      shadowRadius: 12,
+      elevation: 4,
+      marginBottom: 16,
+    },
+    emptyPicker: {
+      borderWidth: 2,
+      borderStyle: 'dashed',
+      borderColor: colors.primary,
+      borderRadius: 16,
+      paddingVertical: 32,
+      paddingHorizontal: 16,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'rgba(99, 102, 241, 0.03)',
+    },
+    iconCircle: {
+      width: 64,
+      height: 64,
+      borderRadius: 32,
+      backgroundColor: 'rgba(99, 102, 241, 0.12)',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 14,
+    },
+    pickerHeading: {
+      fontSize: 17,
+      fontWeight: '700',
+      color: colors.text,
+      marginBottom: 6,
+      textAlign: 'center',
+    },
+    pickerSubtext: {
+      fontSize: 13,
+      color: colors.textSecondary,
+      textAlign: 'center',
+      marginBottom: 18,
+      lineHeight: 18,
+      paddingHorizontal: 16,
+    },
+    galleryButton: {
+      backgroundColor: colors.primary,
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 22,
+      borderRadius: 14,
+      gap: 8,
+    },
+    galleryButtonText: {
+      color: '#FFFFFF',
+      fontSize: 15,
+      fontWeight: '600',
+    },
+    // Selected Image Area
+    imageWrapper: {
+      borderRadius: 16,
+      overflow: 'hidden',
+      backgroundColor: colors.surface,
+      position: 'relative',
+    },
+    previewImage: {
+      width: '100%',
+      height: 220,
+      resizeMode: 'cover',
+    },
+    imageActionsBar: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginTop: 12,
+      gap: 10,
+    },
+    changeButton: {
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 10,
+      paddingHorizontal: 14,
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.surface,
+      gap: 6,
+    },
+    changeButtonText: {
+      fontSize: 13,
+      fontWeight: '600',
+      color: colors.text,
+    },
+    reanalyzeButton: {
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 10,
+      paddingHorizontal: 14,
+      borderRadius: 12,
+      backgroundColor: colors.primary,
+      gap: 6,
+    },
+    reanalyzeButtonText: {
+      fontSize: 13,
+      fontWeight: '600',
+      color: '#FFFFFF',
+    },
+    // Quick Demo Preset Section
+    presetsContainer: {
+      marginBottom: 16,
+    },
+    presetsLabel: {
+      fontSize: 13,
+      fontWeight: '600',
+      color: colors.textSecondary,
+      marginBottom: 8,
+      textTransform: 'uppercase',
+      letterSpacing: 0.5,
+    },
+    presetScroll: {
+      gap: 8,
+      paddingVertical: 2,
+    },
+    presetChip: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: colors.card,
+      borderWidth: 1,
+      borderColor: colors.border,
+      paddingVertical: 7,
+      paddingHorizontal: 12,
+      borderRadius: 20,
+      gap: 6,
+    },
+    presetChipActive: {
+      backgroundColor: colors.primary,
+      borderColor: colors.primary,
+    },
+    presetEmoji: {
+      fontSize: 15,
+    },
+    presetChipText: {
+      fontSize: 13,
+      fontWeight: '600',
+      color: colors.text,
+    },
+    presetChipTextActive: {
+      color: '#FFFFFF',
+    },
+    // Analyzing state
+    loadingCard: {
+      backgroundColor: colors.card,
+      borderRadius: 20,
+      padding: 24,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 1,
+      borderColor: colors.border,
+      marginVertical: 12,
+    },
+    loadingText: {
+      marginTop: 12,
+      fontSize: 15,
+      fontWeight: '600',
+      color: colors.text,
+    },
+    loadingSubtext: {
+      marginTop: 4,
+      fontSize: 12,
+      color: colors.textSecondary,
+    },
+    // Result Card
+    resultCard: {
+      backgroundColor: colors.card,
+      borderRadius: 20,
+      padding: 18,
+      borderWidth: 1,
+      borderColor: colors.border,
+      shadowColor: colors.shadow,
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.08,
+      shadowRadius: 12,
+      elevation: 4,
+      marginBottom: 16,
+    },
+    // Detection Status Header
+    statusRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: 14,
+    },
+    statusBadge: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingVertical: 5,
+      paddingHorizontal: 10,
+      borderRadius: 12,
+      gap: 6,
+    },
+    statusBadgeSuccess: {
+      backgroundColor: 'rgba(34, 197, 94, 0.12)',
+    },
+    statusBadgeError: {
+      backgroundColor: 'rgba(239, 68, 68, 0.12)',
+    },
+    statusTextSuccess: {
+      fontSize: 12,
+      fontWeight: '700',
+      color: colors.success,
+    },
+    statusTextError: {
+      fontSize: 12,
+      fontWeight: '700',
+      color: colors.error,
+    },
+    ratingBadge: {
+      paddingVertical: 4,
+      paddingHorizontal: 9,
+      borderRadius: 10,
+      backgroundColor: 'rgba(99, 102, 241, 0.1)',
+    },
+    ratingBadgeText: {
+      fontSize: 11,
+      fontWeight: '700',
+      color: colors.primary,
+    },
+    // Food Details
+    foodTitle: {
+      fontSize: 22,
+      fontWeight: '800',
+      color: colors.text,
+      marginBottom: 4,
+    },
+    categoryTag: {
+      fontSize: 13,
+      fontWeight: '600',
+      color: colors.primary,
+      marginBottom: 14,
+    },
+    // Calories Banner
+    caloriesBox: {
+      backgroundColor: 'rgba(99, 102, 241, 0.07)',
+      borderRadius: 16,
+      padding: 16,
+      borderWidth: 1,
+      borderColor: 'rgba(99, 102, 241, 0.2)',
+      marginBottom: 16,
+    },
+    caloriesTopRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    caloriesLeft: {
+      flexDirection: 'row',
+      alignItems: 'baseline',
+      gap: 6,
+    },
+    caloriesNumber: {
+      fontSize: 38,
+      fontWeight: '900',
+      color: colors.primary,
+    },
+    caloriesUnit: {
+      fontSize: 16,
+      fontWeight: '700',
+      color: colors.textSecondary,
+    },
+    servingSubtext: {
+      fontSize: 12,
+      color: colors.textSecondary,
+      marginTop: 2,
+    },
+    // Portion Stepper
+    stepperWrapper: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: colors.card,
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: colors.border,
+      padding: 2,
+    },
+    stepperBtn: {
+      width: 32,
+      height: 32,
+      borderRadius: 8,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: colors.surface,
+    },
+    stepperValue: {
+      paddingHorizontal: 10,
+      fontSize: 13,
+      fontWeight: '700',
+      color: colors.text,
+    },
+    // Macro Nutrients Grid
+    macrosGrid: {
+      flexDirection: 'row',
+      gap: 8,
+      marginBottom: 16,
+    },
+    macroTile: {
+      flex: 1,
+      paddingVertical: 12,
+      paddingHorizontal: 6,
+      borderRadius: 14,
+      alignItems: 'center',
+    },
+    macroTileProtein: {
+      backgroundColor: 'rgba(59, 130, 246, 0.08)',
+      borderWidth: 1,
+      borderColor: 'rgba(59, 130, 246, 0.25)',
+    },
+    macroTileCarbs: {
+      backgroundColor: 'rgba(245, 158, 11, 0.08)',
+      borderWidth: 1,
+      borderColor: 'rgba(245, 158, 11, 0.25)',
+    },
+    macroTileFat: {
+      backgroundColor: 'rgba(236, 72, 153, 0.08)',
+      borderWidth: 1,
+      borderColor: 'rgba(236, 72, 153, 0.25)',
+    },
+    macroTileFiber: {
+      backgroundColor: 'rgba(34, 197, 94, 0.08)',
+      borderWidth: 1,
+      borderColor: 'rgba(34, 197, 94, 0.25)',
+    },
+    macroVal: {
+      fontSize: 15,
+      fontWeight: '800',
+      color: colors.text,
+      marginTop: 2,
+    },
+    macroLabel: {
+      fontSize: 11,
+      fontWeight: '600',
+      color: colors.textSecondary,
+      marginTop: 2,
+    },
+    // Distribution Bar
+    ratioContainer: {
+      marginBottom: 16,
+    },
+    ratioLabels: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginBottom: 6,
+    },
+    ratioLabelText: {
+      fontSize: 11,
+      color: colors.textSecondary,
+      fontWeight: '600',
+    },
+    ratioBar: {
+      height: 8,
+      borderRadius: 4,
+      flexDirection: 'row',
+      overflow: 'hidden',
+      backgroundColor: colors.border,
+    },
+    ratioProtein: {
+      backgroundColor: '#3B82F6',
+    },
+    ratioCarbs: {
+      backgroundColor: '#F59E0B',
+    },
+    ratioFat: {
+      backgroundColor: '#EC4899',
+    },
+    // Health Tips
+    healthSection: {
+      backgroundColor: colors.surface,
+      borderRadius: 14,
+      padding: 12,
+      borderWidth: 1,
+      borderColor: colors.border,
+      marginBottom: 14,
+    },
+    healthHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 6,
+      marginBottom: 8,
+    },
+    healthTitle: {
+      fontSize: 13,
+      fontWeight: '700',
+      color: colors.text,
+    },
+    tipItem: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      gap: 6,
+      marginBottom: 6,
+    },
+    tipBullet: {
+      fontSize: 12,
+      color: colors.primary,
+      marginTop: 1,
+    },
+    tipText: {
+      flex: 1,
+      fontSize: 12,
+      color: colors.textSecondary,
+      lineHeight: 17,
+    },
+    // Labels Chips
+    labelsContainer: {
+      marginTop: 6,
+    },
+    labelsTitle: {
+      fontSize: 12,
+      fontWeight: '700',
+      color: colors.textSecondary,
+      marginBottom: 6,
+      textTransform: 'uppercase',
+      letterSpacing: 0.5,
+    },
+    chipsWrap: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 6,
+    },
+    labelChip: {
+      backgroundColor: colors.surface,
+      borderWidth: 1,
+      borderColor: colors.border,
+      paddingVertical: 4,
+      paddingHorizontal: 8,
+      borderRadius: 10,
+    },
+    labelChipText: {
+      fontSize: 11,
+      color: colors.textSecondary,
+      fontWeight: '600',
+    },
+    // Not Food Notice Box
+    notFoodBox: {
+      backgroundColor: 'rgba(239, 68, 68, 0.05)',
+      borderRadius: 16,
+      padding: 18,
+      borderWidth: 1,
+      borderColor: 'rgba(239, 68, 68, 0.25)',
+      alignItems: 'center',
+      marginBottom: 16,
+    },
+    notFoodTitle: {
+      fontSize: 17,
+      fontWeight: '700',
+      color: colors.error,
+      marginTop: 8,
+      marginBottom: 4,
+    },
+    notFoodDesc: {
+      fontSize: 13,
+      color: colors.textSecondary,
+      textAlign: 'center',
+      lineHeight: 18,
+      marginBottom: 14,
+    },
+    notFoodReason: {
+      fontSize: 13,
+      color: colors.textMuted,
+      textAlign: 'center',
+      lineHeight: 18,
+      fontStyle: 'italic',
+      marginBottom: 14,
+    },
+    notFoodButton: {
+      backgroundColor: colors.primary,
+      paddingVertical: 10,
+      paddingHorizontal: 20,
+      borderRadius: 12,
+    },
+    notFoodButtonText: {
+      color: '#FFFFFF',
+      fontSize: 13,
+      fontWeight: '700',
+    },
+  });
+
+export default getStyles;
