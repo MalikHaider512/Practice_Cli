@@ -27,7 +27,7 @@ export default function Home() {
         renderItem={({ item }) => (
           <OptionCard
             title={item?.name}
-            description={''}
+            description={item?.description}
             onPress={() => handlePress(item.screen as keyof RootStackParamList)}
             icon={''}
           />
