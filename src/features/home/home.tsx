@@ -13,6 +13,7 @@ export default function Home() {
   const navigation = useNavigation();
 
   const handlePress = (screen?: keyof RootStackParamList) => {
+    console.log(screen);
     if (!screen) return;
     navigation.navigate(screen);
   };
@@ -21,7 +22,7 @@ export default function Home() {
     <SafeAreaView
       style={[styles.container, { backgroundColor: colors.background }]}
     >
-      <Header />
+      <Header showBack={false} title="Main Home" />
       <FlatList
         data={featuresList}
         renderItem={({ item }) => (

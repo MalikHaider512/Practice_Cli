@@ -1,0 +1,353 @@
+import { StyleSheet } from 'react-native';
+import { AppThemeColors } from '../../utils/Colors';
+
+export const getStyles = (colors: AppThemeColors) =>
+  StyleSheet.create({
+    safeArea: {
+      flex: 1,
+      backgroundColor: colors.background,
+      paddingHorizontal: 16,
+    },
+    container: {
+      flex: 1,
+    },
+    scrollContent: {
+      paddingBottom: 40,
+    },
+    // Hero Card
+    heroCard: {
+      backgroundColor: colors.card,
+      borderRadius: 16,
+      padding: 16,
+      marginVertical: 12,
+      borderWidth: 1,
+      borderColor: colors.border,
+      shadowColor: colors.shadow,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.05,
+      shadowRadius: 8,
+      elevation: 2,
+    },
+    heroBadge: {
+      alignSelf: 'flex-start',
+      backgroundColor: 'rgba(99, 102, 241, 0.12)',
+      paddingHorizontal: 10,
+      paddingVertical: 4,
+      borderRadius: 8,
+      marginBottom: 8,
+    },
+    heroBadgeText: {
+      fontSize: 12,
+      fontWeight: '700',
+      color: colors.primary,
+      textTransform: 'uppercase',
+    },
+    heroTitle: {
+      fontSize: 20,
+      fontWeight: '700',
+      color: colors.text,
+      marginBottom: 6,
+    },
+    heroDescription: {
+      fontSize: 14,
+      lineHeight: 20,
+      color: colors.textSecondary,
+      marginBottom: 12,
+    },
+    architectureBox: {
+      backgroundColor: colors.surface,
+      borderRadius: 10,
+      padding: 10,
+      borderWidth: 1,
+      borderColor: colors.border,
+      marginBottom: 8,
+    },
+    architectureText: {
+      fontFamily: 'monospace',
+      fontSize: 12,
+      color: colors.text,
+      lineHeight: 18,
+    },
+    // Section Card
+    sectionCard: {
+      backgroundColor: colors.card,
+      borderRadius: 16,
+      padding: 16,
+      marginBottom: 16,
+      borderWidth: 1,
+      borderColor: colors.border,
+      shadowColor: colors.shadow,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.04,
+      shadowRadius: 6,
+      elevation: 2,
+    },
+    sectionHeader: {
+      marginBottom: 12,
+    },
+    sectionNumberBadge: {
+      alignSelf: 'flex-start',
+      backgroundColor: colors.primary,
+      borderRadius: 12,
+      paddingHorizontal: 8,
+      paddingVertical: 2,
+      marginBottom: 6,
+    },
+    sectionNumberText: {
+      fontSize: 11,
+      fontWeight: '700',
+      color: '#FFFFFF',
+    },
+    sectionTitle: {
+      fontSize: 17,
+      fontWeight: '700',
+      color: colors.text,
+      marginBottom: 4,
+    },
+    sectionSubtitle: {
+      fontSize: 13,
+      lineHeight: 18,
+      color: colors.textSecondary,
+    },
+    // Controls
+    controlLabel: {
+      fontSize: 12,
+      fontWeight: '600',
+      color: colors.textSecondary,
+      marginTop: 10,
+      marginBottom: 6,
+      textTransform: 'uppercase',
+      letterSpacing: 0.5,
+    },
+    buttonRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 6,
+      marginBottom: 8,
+    },
+    pillButton: {
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+      borderRadius: 8,
+      backgroundColor: colors.surface,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    pillButtonActive: {
+      backgroundColor: colors.primary,
+      borderColor: colors.primary,
+    },
+    pillButtonText: {
+      fontSize: 12,
+      fontWeight: '600',
+      color: colors.textSecondary,
+    },
+    pillButtonTextActive: {
+      color: '#FFFFFF',
+    },
+    // Live Canvas / Container
+    previewCanvas: {
+      backgroundColor: colors.surface,
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: colors.border,
+      padding: 12,
+      marginVertical: 10,
+      overflow: 'hidden',
+    },
+    // Playground 1: Style vs imageStyle
+    cornerBleedContainer: {
+      width: '100%',
+      height: 140,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderWidth: 2,
+      borderColor: colors.primary,
+    },
+    codeBlock: {
+      backgroundColor: colors.surface,
+      borderRadius: 10,
+      padding: 10,
+      marginTop: 8,
+      borderWidth: 1,
+      borderColor: colors.border,
+    },
+    codeText: {
+      fontFamily: 'monospace',
+      fontSize: 12,
+      color: colors.text,
+      lineHeight: 18,
+    },
+    // Overlay Demo
+    overlayBackground: {
+      width: '100%',
+      height: 160,
+      borderRadius: 12,
+      overflow: 'hidden',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 16,
+    },
+    darkTintOverlay: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.55)',
+    },
+    tintTextTitle: {
+      fontSize: 20,
+      fontWeight: '800',
+      color: '#FFFFFF',
+      textAlign: 'center',
+      textShadowColor: 'rgba(0,0,0,0.7)',
+      textShadowOffset: { width: 0, height: 2 },
+      textShadowRadius: 6,
+    },
+    tintTextSubtitle: {
+      fontSize: 13,
+      color: 'rgba(255, 255, 255, 0.9)',
+      textAlign: 'center',
+      marginTop: 4,
+    },
+    // Real-world Cards
+    // A. Profile Banner
+    profileBanner: {
+      width: '100%',
+      height: 130,
+      borderRadius: 12,
+      overflow: 'hidden',
+      justifyContent: 'flex-end',
+      padding: 12,
+      marginBottom: 28,
+    },
+    profileGradientLayer: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(15, 23, 42, 0.45)',
+    },
+    avatarOverlap: {
+      position: 'absolute',
+      bottom: -24,
+      left: 14,
+      width: 56,
+      height: 56,
+      borderRadius: 28,
+      borderWidth: 3,
+      borderColor: colors.card,
+    },
+    profileInfo: {
+      marginLeft: 66,
+    },
+    profileName: {
+      fontSize: 15,
+      fontWeight: '700',
+      color: '#FFFFFF',
+    },
+    profileHandle: {
+      fontSize: 12,
+      color: 'rgba(255,255,255,0.8)',
+    },
+    // B. Movie Card
+    movieCard: {
+      width: '100%',
+      height: 180,
+      borderRadius: 14,
+      overflow: 'hidden',
+      justifyContent: 'space-between',
+      padding: 14,
+      marginVertical: 6,
+    },
+    movieTopRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    movieBadge: {
+      backgroundColor: 'rgba(239, 68, 68, 0.9)',
+      paddingHorizontal: 8,
+      paddingVertical: 3,
+      borderRadius: 6,
+    },
+    movieBadgeText: {
+      fontSize: 11,
+      fontWeight: '700',
+      color: '#FFFFFF',
+    },
+    movieRatingText: {
+      fontSize: 12,
+      fontWeight: '700',
+      color: '#F59E0B',
+      backgroundColor: 'rgba(0,0,0,0.6)',
+      paddingHorizontal: 6,
+      paddingVertical: 2,
+      borderRadius: 4,
+    },
+    movieBottomContent: {
+      backgroundColor: 'rgba(0,0,0,0.65)',
+      padding: 10,
+      borderRadius: 8,
+    },
+    movieTitle: {
+      fontSize: 16,
+      fontWeight: '800',
+      color: '#FFFFFF',
+    },
+    movieGenre: {
+      fontSize: 12,
+      color: 'rgba(255,255,255,0.75)',
+      marginTop: 2,
+    },
+    watchButton: {
+      backgroundColor: colors.primary,
+      paddingVertical: 6,
+      paddingHorizontal: 12,
+      borderRadius: 6,
+      alignSelf: 'flex-start',
+      marginTop: 6,
+    },
+    watchButtonText: {
+      color: '#FFFFFF',
+      fontSize: 11,
+      fontWeight: '700',
+    },
+    // C. Music Player
+    musicPlayerBackground: {
+      width: '100%',
+      height: 140,
+      borderRadius: 12,
+      overflow: 'hidden',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 14,
+    },
+    musicControlsRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 16,
+      marginTop: 8,
+    },
+    musicPlayBtn: {
+      width: 44,
+      height: 44,
+      borderRadius: 22,
+      backgroundColor: colors.primary,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    musicTrackTitle: {
+      fontSize: 15,
+      fontWeight: '700',
+      color: '#FFFFFF',
+    },
+    musicArtist: {
+      fontSize: 12,
+      color: 'rgba(255,255,255,0.8)',
+    },
+  });
+
+export default getStyles;

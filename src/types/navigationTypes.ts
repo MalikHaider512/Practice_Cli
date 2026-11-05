@@ -7,6 +7,10 @@ export type RootStackParamList = {
   ImageLabelling: undefined;
   FoodDetection: undefined;
   TextRecognition: undefined;
+  View: undefined;
+  Text: undefined;
+  Image: undefined;
+  ImageBackground: undefined;
 };
 
 export type HomeScreenProps = NativeStackScreenProps<

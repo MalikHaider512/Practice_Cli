@@ -7,8 +7,12 @@ import {
   FaceDetectionScreen,
   FoodDetectionScreen,
   HomeScreen,
+  ImageBackgroundScreen,
   ImageLabellingScreen,
+  ImageScreen,
   MLKitMainMenuScreen,
+  TextScreen,
+  ViewScreen,
 } from '../features';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -38,6 +42,14 @@ export const RootNavigator = () => {
         <Stack.Screen
           name={screenNames.FOODDETECTION}
           component={FoodDetectionScreen}
+        />
+
+        <Stack.Screen name={screenNames.VIEW} component={ViewScreen} />
+        <Stack.Screen name={screenNames.TEXT} component={TextScreen} />
+        <Stack.Screen name={screenNames.IMAGE} component={ImageScreen} />
+        <Stack.Screen
+          name={screenNames.IMAGEBACKGROUND}
+          component={ImageBackgroundScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
